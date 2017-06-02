@@ -15,7 +15,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,33 +27,13 @@ public class MainActivity extends AppCompatActivity {
         Fragment f1 = new FragmentFirst();
         ft.replace(R.id.frame1, f1);
 
+        Fragment f2 = new FragmentSecond();
+        ft.replace(R.id.frame1, f2);
+
         ft.commit();
 
 
     }
-
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-
-        switch (requestCode) {
-            case 0: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted, yay! Do the read SMS
-                    //  as if the btnRetrieve is clicked
-                    btn.performClick();
-
-                } else {
-                    // permission denied... notify user
-                    Toast.makeText(MainActivity.this, "Permission not granted",
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }
-
 }
+
+
