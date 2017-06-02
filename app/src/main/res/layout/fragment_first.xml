@@ -14,14 +14,14 @@
         android:text="Only SMS Containing this number" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/etNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="none" />
 
     <Button
-        android:id="@+id/btnAddRetrieveFrag1"
+        android:id="@+id/btnRetrieveSMS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Retrieve SMS" />

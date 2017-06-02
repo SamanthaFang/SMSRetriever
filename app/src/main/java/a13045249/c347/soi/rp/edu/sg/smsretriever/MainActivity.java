@@ -1,5 +1,6 @@
 package a13045249.c347.soi.rp.edu.sg.smsretriever;
 
+import android.content.pm.PackageManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,4 +32,29 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+
+        switch (requestCode) {
+            case 0: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the read SMS
+                    //  as if the btnRetrieve is clicked
+                    btn.performClick();
+
+                } else {
+                    // permission denied... notify user
+                    Toast.makeText(MainActivity.this, "Permission not granted",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+    }
+
 }
